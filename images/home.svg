@@ -1,0 +1,13 @@
+<svg id="лого" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92" height="63" viewBox="0 0 92 60">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 18px;
+        fill: #fff;
+        font-family: Neumann;
+      }
+    </style>
+  </defs>
+  <image id="home" x="27" width="34" height="39" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAnCAYAAABqippxAAAB30lEQVRYhe2VMUgDMRSG/7ZSi0snt+4dXdxFFxFBOkgXB91EEARBKDjaQSiImy6iFRzcRHBwEZx1cFRwEd1K0UKtWpRfgi8QQ9u7XNujw/3w4C55+fNd8pIDyW5ijeQTySLJWDde3UAU+F9HJBNhg9gQWmckU2GBbFmTH5P8NN6vSKb7DbJtQaxK+yTJmtF+S3K0XyA2xIrVP06yYvTfk8z0EkSdhl0PCB1Zks9G3ou0dQ2iIPYM4x+Six5jMrIaWhVZrcAgrSAWfC61qo8bY2xN6sgZRN0HBwEhdKTlBGmpk5VzAVEQJ4ZBk+S8I4SOYblbzA9a8gPSCmIuIITpeWgV+3onkCTJ0x5DmPW2Y8EUW4EoiHMjqUFypkcQZmxaMPv6/9QOYqoPEDqWpVa01C4kVUc5RAgdedl6rbJqrMpLneRECBA6pkl+yNzVOIAE/vQI4Brh6RLAg8yWiIc4cUdFILYiEFsDAzIUYMwIgKRHThNAw8XUdUUKAOoAXj2iLrl9A8kDiPnIi0mub7lujQb/BnDRJmdWfJ0+MkiNKL0DyLXpewOQdjWMjq+tCMRWBGJrIP81WQB3HvlZB28nPwXyJc8pAGM+J9FjOvU5+SmQEoANAMMOEGpMO7n7AaVf9ipaLTyhHpcAAAAASUVORK5CYII="/>
+  <text id="House_Care" class="cls-1" x="0.062" y="60.45">House Care</text>
+</svg>

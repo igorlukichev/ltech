@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="lightzoom/style.css">
+    <link rel="stylesheet" href="css/slick.css"/>
+    <link rel="stylesheet" href="css/slick-theme.css"/>
+    <link rel="stylesheet/less" href="css/style.less">
+    <script src="node_modules/less/dist/less.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<section class="main">
+    <a class="arrow">
+        <span>Листайте вниз</span>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15"
+             height="30" viewBox="0 0 15 30">
+            <image id="down-arrow" width="15" height="30"
+                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAeCAYAAADzXER0AAAA70lEQVQ4je2VsUoDQRRFT4y1lZKP0Noq5fsJ+1QpRFiCFnYRYhBBLEIK+xT5hFw2TT5Bf8QfGHnxCbubdVf7vTAM8+49M8wMzPRSStRJ0gh4AO7N7K0uc1RLfusKGERfqya4X+n/tXKrOriDO7iD9zqWNAS8Lczssw2QdAKMgZ2vvAJmwEbSaQvo/ibyK4fX4V0CW0lnv4Be30bOtXY4A5ZRuADy6gQxzsMn8tn+0ZfUA16A6zDfAa+dAx9AKoCvwI2ZpdKPIekRuG3Y9tzM7n4GpasKY/4X8AAuTDCtlKdV0NX00flBToAnM3s+CABfGIRNRuCnIXQAAAAASUVORK5CYII="/>
+        </svg>
+    </a>
+    <nav class="menu" id="menu">
+        <div class="close hvr-bounce-in" id="close">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                 height="30"
+                 viewBox="0 0 30 30">
+                <image id="закрыть" width="30" height="30"
+                       xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAwElEQVRIidWXQQrDMAwEl/7MvvZ7eUrOfUvyiVy3GJyLSdpKllgqCARiaYwsWRuQXEhuJAtJJD+lsxb0l2YHyZoIrp3RbDt3cSTD68Aodx8i4Zexvy7IgI7gaPjHWGaHCOgdeBb+k+90AK9PWCDrRqNSZ85OxLm56mG2Ut1FaAFfwd1tZwWPcHevP6Cyf0i1pLgk7SS5QCRXpmRISMaiRAhIpI9E7EnkrUzQS35h2nRaAewAngBeibOqxW6MHcD6BqJqi/fsJy9EAAAAAElFTkSuQmCC"/>
+            </svg>
+        </div>
+        <h1 class="menu-title">Меню</h1>
+        <ul>
+            <li class="menu-item">
+                <div class="menu-item-decor"></div>
+                <a href="#projects">Каталог</a>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-decor"></div>
+                <a href="#technologies">Технологии</a>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-decor"></div>
+                <a href="#projects">Наши проекты</a>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-decor"></div>
+                <a href="#technologies">Производство</a>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-decor"></div>
+                <a href="#payment">Гарантии</a>
+            </li>
+            <li class="menu-item">
+                <div class="menu-item-decor"></div>
+                <a href="#order-form">Отзывы</a>
+            </li>
+        </ul>
+        <div class="social menu-social">
+            <a href="" class="social-item">
+                <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                     height="30" viewBox="0 0 30 30">
+                    <image id="instagram" width="30" height="30"
+                           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACPklEQVRIicWXvWsUURTFf7sOCTJlIFpYKVgFUiypVwRBU2gQUthGXEiXxiJ/Q/o0FmkMFtskNgZstI9FQCzTmCK7IG6z6IaEKw/OhOs4n8uue+Ax7+O+e+55896bOw0zI4UG8ARYB1rAbWAubVSCC+Ac+AJ0gQ/A30SB2JWWmR3b5HEs39dcXvFTRZeoOwOOgFPgV03FN4G7wGPgjvoutIrvveIQzUg6h2bWMbMotRrjlEi+hvI9SpSHwYZb3mCwMgHCdFlx5IGrETpX3RvtTJDsvpk9dO2O41kNHXtqfK+5vPMqWWM3zOyn/CbkkTgC9po6MmgjXZZsmjbwFugBv1V66ms7uyvgGzDQJkW+j1RvhUj6imK7QN2CmR1UOGQHsvXKvZ9t2fUjd3zyjswC8AlYUjsofAecqL0MvABuAc+Ae8AD4IeUeyQccyGKgaLYylHrle6aWZxhE2vMK8/ytaXxQRlxO0VatuE8ebuIuFmymV655X1dYotseqm5mSgjfqRneKfDCsRD2fq5tYnngUXVTwrs0khsF+WjNvFUUUQ8AvqqL9cIIrHty8dYij/qGc5pXIE0lq2fOxbxGz3D5bBTgXhHtn7uWMSfgUPVN4HdHOWxxjbVPtTcXEQVVLzUNbgkx88LrsyAr5pTjCl/JNLl+iPRVDaIcqQ8hAt/TZf/vtvtqL6vsTXZ5iHhOJ9WIpBV/kkEuooiZIMbFd55glHROc3Ahss4u8wy2WMW6e3ME3qv/L//wiSY/k8b8AdBB3vHI87lIgAAAABJRU5ErkJggg=="/>
+                </svg>
+            </a>
+            <a href="" class="social-item">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                     height="26" viewBox="0 0 30 26">
+                    <image id="telegram_1_" width="30" height="26"
+                           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAaCAYAAACgoey0AAAC+ElEQVRIib2WXWhPYRzHvzOzsZC5QCLlRq6GLUPTqKEUk+Y177UWVyJKkQuUcqVZhKk18hJxg+RiKxZmWxmLkfdCXmZL5m376NHv8Oz0P/1PM371dM75vX2f8zy/5/t7UgD9BxkoaZGkuZI6Je38l8ApkvIlrZFULCnTs7XIAffyGAlsAx7yR1qBA8Bk4AG9CJgOFAOXgE6D6wKuAEuADPNLA74Cz/8WMBvYD7zz/u4xsAMYncB/ovmc69uDvcuStEzSWkkTTNchqUpShaRq29/5kkZJuu7FTrJnXdw/6wPMBk7ZUgVyAygBBpmfK9bFQLPZb4fyHDR9YTLAscAu4IUH9hrYB4z3/BxgEdDo+XUAM0L56syWlQgsE1gJ1HhJvgMXgHlWIL7/HKCe7vLNfMMF+N1qQL5hCnAEaPdS3AM2A8MSTLDQljqQNnu6ql6ewD/X7GcC4HzgbijBISAvYvkLgOrQPm/1gEsj4krNviUA/miKJmAFMCAi0E3kqgfYaMs8DnjrJ40Yh81nZgB8x0vm3vfaXwV7mQNcDgEWWUGNAV6afneSQg0Kb3AAPATYDjSECqQ9tIfNxkIplmgE8MhsZUlA+wM/jEYVLi43hgOr7by2WtL3wDI7y4HfUNsaJ5XeZKJGnvmejAL2R4YVTJvHtTKyuGmJzgOpMQhog/lvigPsxjELWOjpqkx3C+gXk/kqLGZ6XOBZFnDWvlO9Y+PIYH1M4CbrVgPjAjugN8AXq8YcA20BPtv7UWOlqByZRir3fX2fJJ3IXVNOS0qXtEBSgenLJU2V9My6lOtIIyJyZEu/cOp9ZTJgJ8ftudQDdkBPJD217zxJDZKmJIgPWuGtbtoY+5NixO6W6xPwwbg7aAy1dhnAmsO6UHyl2ab5+jjAbuzxiKTBu09d9Ch2ldWCk3Kv4ptt0pk9AR5rzOPLiQTHKdfr3TXGy11Gxd1yxgV2w7W6V7bU7k4VxVZuG66FJrkx7Pev7tVpkkrsXl0rqUxS12+rpJ9vk+a4uT2/LgAAAABJRU5ErkJggg=="/>
+                </svg>
+            </a>
+            <a href="" class="social-item">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31"
+                     height="24" viewBox="0 0 31 24">
+                    <image id="youtube" width="31" height="24"
+                           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAYCAYAAAACqyaBAAACX0lEQVRIib2WTUhVURSFP59W/qYQEg6iiLC/SVBRZGQhQYOoBs2KphFEBM2aOGzipD9o0KRB44ImBUERUQ6EBj3KJIiwekgUpa+0MncsWxcfIniu8lyw2efAPWftc87e+66aiMCoAQ7Z1gArgRagGWgCltkL9cAKZvALmPDsB/DHvgyM2oaBB8B9YJo0I28H7gJ7mB/a8O8cX9U60PnQDxwDRjLyx0A38Aa4CrwGvgHjtu/2Ewmb61YagFagsWK8BThj3z990Ijoiv8YiohWBVNFa4qIovkOFICjjviKT1hNKA+uef/DIt/uyZMqE2d4ar9N5B2evEtYqKQ6DuxcBPl7+w69w3BETCW+84mYwZ2I6FxgfohvuOBaHk2Mur1irHIpApeBVTlPL76Wgq9yKufiXuCS6/0c8Ba4ACxPXC++2oIbQ+rJKyO/CGwCbgNtQJ/7w8HE9c2FnKSzoeQ5CewCPgPrgVupixdLLuwHrlfkw8OlIFebvAc8AnYAg8AR4FTyDhFRjogviSVy3oU2GBGTHpci4nRE1OUoNfGV64BJZ3wKfvubjW6VfbZyzlsT36T+ah/c5VIC0Hc3nGgqtVJO0gwq0ZLIXwGb3WzynmAhUGmPqSyVcCPeYO0SEAvr7EdE/sKTvUtEvs9+QJnX46wt+mdfTTHRqGc2X7feXMLxGbAbGAJuAi+Br5ZOY86FcWf4fKi3tVlCNXjcCZwFtgLPga5Mw622gFQAKZhL8aQKyAGrp0+zpXOP2+UGiz/JZ8lljeU1z7qiRGGGSun80/1AXrcm04/ko1uvuuIUwD99cw44W1OwbwAAAABJRU5ErkJggg=="/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <header class="header">
+        <div class="container">
+            <div class="burger hvr-bounce-in" id="burger">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40"
+                     height="28"
+                     viewBox="0 0 40 28">
+                    <image id="меню" width="40" height="28"
+                           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAcCAYAAAATFf3WAAAAoklEQVRYhe3YsQ2DMBBG4QdKk4IdIrFBiiyTEoZghOwAGcUDJAUrwA4UlI6uoDPVNX+kexN88kln2VXO+Qm8gAatNmAw4ALcxHBHaw0kDUuxZCdYAXfREc8GFLCcV6vCjgLoLYDeAujtArRAD1zFbDsw2aL+AA8BUKmv/IjtBOVHLGA5L9aMtwB6C6C3v7iLpR9NBhyBTgBU6i3/cNf++oDhByIUMLWcPRCOAAAAAElFTkSuQmCC"/>
+                </svg>
+            </div>
+            <a href="#" class="logo">
+                <svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92"
+                     height="63" viewBox="0 0 92 60">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                font-size: 18px;
+                                fill: #fff;
+                                font-family: Neumann, sans-serif;
+                            }
+                        </style>
+                    </defs>
+                    <image id="home" x="27" width="34" height="39"
+                           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAnCAYAAABqippxAAAB30lEQVRYhe2VMUgDMRSG/7ZSi0snt+4dXdxFFxFBOkgXB91EEARBKDjaQSiImy6iFRzcRHBwEZx1cFRwEd1K0UKtWpRfgi8QQ9u7XNujw/3w4C55+fNd8pIDyW5ijeQTySLJWDde3UAU+F9HJBNhg9gQWmckU2GBbFmTH5P8NN6vSKb7DbJtQaxK+yTJmtF+S3K0XyA2xIrVP06yYvTfk8z0EkSdhl0PCB1Zks9G3ou0dQ2iIPYM4x+Six5jMrIaWhVZrcAgrSAWfC61qo8bY2xN6sgZRN0HBwEhdKTlBGmpk5VzAVEQJ4ZBk+S8I4SOYblbzA9a8gPSCmIuIITpeWgV+3onkCTJ0x5DmPW2Y8EUW4EoiHMjqUFypkcQZmxaMPv6/9QOYqoPEDqWpVa01C4kVUc5RAgdedl6rbJqrMpLneRECBA6pkl+yNzVOIAE/vQI4Brh6RLAg8yWiIc4cUdFILYiEFsDAzIUYMwIgKRHThNAw8XUdUUKAOoAXj2iLrl9A8kDiPnIi0mub7lujQb/BnDRJmdWfJ0+MkiNKL0DyLXpewOQdjWMjq+tCMRWBGJrIP81WQB3HvlZB28nPwXyJc8pAGM+J9FjOvU5+SmQEoANAMMOEGpMO7n7AaVf9ipaLTyhHpcAAAAASUVORK5CYII="/>
+                    <text id="House_Care" data-name="House Care" class="cls-1" x="0.062" y="60.45">House Care</text>
+                </svg>
+            </a>
+            <div class="phone">
+                <span class="phone-number">+380 (96) 73-67-281</span>
+                <div class="phone-number-order">
+                    <div class="anim"></div>
+                    <a class="phone-number-order-link go-to-order hvr-bounce-in">Заказать звонок</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="first-section wow animate__animated animate__fadeInDown">
+        <div class="container">
+            <h1 class="first-section-title">Строительство домов и коттеджей под ключ</h1>
+            <span class="first-section-text">Сможете переехать в готовый дом уже через 3 месяца</span>
+            <button type="button" class="btn first-section-btn go-to-order hvr-bounce-in">Узнать подробнее</button>
+            <div class="social main-social">
+                <a href="#" class="social-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                         height="30" viewBox="0 0 30 30">
+                        <image id="instagram" width="30" height="30"
+                               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACPklEQVRIicWXvWsUURTFf7sOCTJlIFpYKVgFUiypVwRBU2gQUthGXEiXxiJ/Q/o0FmkMFtskNgZstI9FQCzTmCK7IG6z6IaEKw/OhOs4n8uue+Ax7+O+e+55896bOw0zI4UG8ARYB1rAbWAubVSCC+Ac+AJ0gQ/A30SB2JWWmR3b5HEs39dcXvFTRZeoOwOOgFPgV03FN4G7wGPgjvoutIrvveIQzUg6h2bWMbMotRrjlEi+hvI9SpSHwYZb3mCwMgHCdFlx5IGrETpX3RvtTJDsvpk9dO2O41kNHXtqfK+5vPMqWWM3zOyn/CbkkTgC9po6MmgjXZZsmjbwFugBv1V66ms7uyvgGzDQJkW+j1RvhUj6imK7QN2CmR1UOGQHsvXKvZ9t2fUjd3zyjswC8AlYUjsofAecqL0MvABuAc+Ae8AD4IeUeyQccyGKgaLYylHrle6aWZxhE2vMK8/ytaXxQRlxO0VatuE8ebuIuFmymV655X1dYotseqm5mSgjfqRneKfDCsRD2fq5tYnngUXVTwrs0khsF+WjNvFUUUQ8AvqqL9cIIrHty8dYij/qGc5pXIE0lq2fOxbxGz3D5bBTgXhHtn7uWMSfgUPVN4HdHOWxxjbVPtTcXEQVVLzUNbgkx88LrsyAr5pTjCl/JNLl+iPRVDaIcqQ8hAt/TZf/vtvtqL6vsTXZ5iHhOJ9WIpBV/kkEuooiZIMbFd55glHROc3Ahss4u8wy2WMW6e3ME3qv/L//wiSY/k8b8AdBB3vHI87lIgAAAABJRU5ErkJggg=="/>
+                    </svg>
+                </a>
+                <a href="#" class="social-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                         height="26" viewBox="0 0 30 26">
+                        <image id="telegram_1_" width="30" height="26"
+                               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAaCAYAAACgoey0AAAC+ElEQVRIib2WXWhPYRzHvzOzsZC5QCLlRq6GLUPTqKEUk+Y177UWVyJKkQuUcqVZhKk18hJxg+RiKxZmWxmLkfdCXmZL5m376NHv8Oz0P/1PM371dM75vX2f8zy/5/t7UgD9BxkoaZGkuZI6Je38l8ApkvIlrZFULCnTs7XIAffyGAlsAx7yR1qBA8Bk4AG9CJgOFAOXgE6D6wKuAEuADPNLA74Cz/8WMBvYD7zz/u4xsAMYncB/ovmc69uDvcuStEzSWkkTTNchqUpShaRq29/5kkZJuu7FTrJnXdw/6wPMBk7ZUgVyAygBBpmfK9bFQLPZb4fyHDR9YTLAscAu4IUH9hrYB4z3/BxgEdDo+XUAM0L56syWlQgsE1gJ1HhJvgMXgHlWIL7/HKCe7vLNfMMF+N1qQL5hCnAEaPdS3AM2A8MSTLDQljqQNnu6ql6ewD/X7GcC4HzgbijBISAvYvkLgOrQPm/1gEsj4krNviUA/miKJmAFMCAi0E3kqgfYaMs8DnjrJ40Yh81nZgB8x0vm3vfaXwV7mQNcDgEWWUGNAV6afneSQg0Kb3AAPATYDjSECqQ9tIfNxkIplmgE8MhsZUlA+wM/jEYVLi43hgOr7by2WtL3wDI7y4HfUNsaJ5XeZKJGnvmejAL2R4YVTJvHtTKyuGmJzgOpMQhog/lvigPsxjELWOjpqkx3C+gXk/kqLGZ6XOBZFnDWvlO9Y+PIYH1M4CbrVgPjAjugN8AXq8YcA20BPtv7UWOlqByZRir3fX2fJJ3IXVNOS0qXtEBSgenLJU2V9My6lOtIIyJyZEu/cOp9ZTJgJ8ftudQDdkBPJD217zxJDZKmJIgPWuGtbtoY+5NixO6W6xPwwbg7aAy1dhnAmsO6UHyl2ab5+jjAbuzxiKTBu09d9Ch2ldWCk3Kv4ptt0pk9AR5rzOPLiQTHKdfr3TXGy11Gxd1yxgV2w7W6V7bU7k4VxVZuG66FJrkx7Pev7tVpkkrsXl0rqUxS12+rpJ9vk+a4uT2/LgAAAABJRU5ErkJggg=="/>
+                    </svg>
+                </a>
+                <a href="#" class="social-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31"
+                         height="24" viewBox="0 0 31 24">
+                        <image id="youtube" width="31" height="24"
+                               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAYCAYAAAACqyaBAAACX0lEQVRIib2WTUhVURSFP59W/qYQEg6iiLC/SVBRZGQhQYOoBs2KphFEBM2aOGzipD9o0KRB44ImBUERUQ6EBj3KJIiwekgUpa+0MncsWxcfIniu8lyw2efAPWftc87e+66aiMCoAQ7Z1gArgRagGWgCltkL9cAKZvALmPDsB/DHvgyM2oaBB8B9YJo0I28H7gJ7mB/a8O8cX9U60PnQDxwDRjLyx0A38Aa4CrwGvgHjtu/2Ewmb61YagFagsWK8BThj3z990Ijoiv8YiohWBVNFa4qIovkOFICjjviKT1hNKA+uef/DIt/uyZMqE2d4ar9N5B2evEtYqKQ6DuxcBPl7+w69w3BETCW+84mYwZ2I6FxgfohvuOBaHk2Mur1irHIpApeBVTlPL76Wgq9yKufiXuCS6/0c8Ba4ACxPXC++2oIbQ+rJKyO/CGwCbgNtQJ/7w8HE9c2FnKSzoeQ5CewCPgPrgVupixdLLuwHrlfkw8OlIFebvAc8AnYAg8AR4FTyDhFRjogviSVy3oU2GBGTHpci4nRE1OUoNfGV64BJZ3wKfvubjW6VfbZyzlsT36T+ah/c5VIC0Hc3nGgqtVJO0gwq0ZLIXwGb3WzynmAhUGmPqSyVcCPeYO0SEAvr7EdE/sKTvUtEvs9+QJnX46wt+mdfTTHRqGc2X7feXMLxGbAbGAJuAi+Br5ZOY86FcWf4fKi3tVlCNXjcCZwFtgLPga5Mw622gFQAKZhL8aQKyAGrp0+zpXOP2+UGiz/JZ8lljeU1z7qiRGGGSun80/1AXrcm04/ko1uvuuIUwD99cw44W1OwbwAAAABJRU5ErkJggg=="/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="projects wow animate__animated animate__fadeInDown">
+    <div class="container">
+        <h1 class="projects-title" id="projects-title">Наши проекты</h1>
+        <div class="projects-items" id="projects">
+            <div class="project first-block">
+                <div class="project-title-hidden">Modern house 003</div>
+                <div class="project-images first-block">
+                    <div class="project-images-single">
+                        <a href="lightzoom/image/ourprj_1.png" class="lightzoom">
+                            <img src="images/our_prj1.png">
+                        </a>
+                    </div>
+                    <div class="project-images-row">
+
+                        <a href="lightzoom/image/ourprj_2.png" class="lightzoom">
+                            <img src="images/our_prj2.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_2.png" class="lightzoom">
+                            <img src="images/our_prj3.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_2.png" class="lightzoom">
+                            <img src="images/our_prj4.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="project-description first-block">
+                    <div class="project-title">Modern house 003</div>
+                    <div class="project-text">
+                        Этот проект представляет собой красивый и удобный одноэтажный дом с многоскатной кровлей,
+                        эркером и камином на террасе. Его внешний традиционный архитектурный стиль прекрасно сочетается
+                        с современной практичной планировкой интерьера.
+                    </div>
+                    <div class="project-rounds">
+                        <div class="project-round-first">134 м2</div>
+                        <div class="project-round-second"><span>4</span> спальни</div>
+                        <div class="project-round-third"><span>2</span> санузла</div>
+                    </div>
+                    <div class="project-action consult">
+                        <button class="btn second-section-btn go-to-order hvr-bounce-in">Получить консультацию</button>
+                    </div>
+                    <div class="project-action download">
+                        <button class="btn second-section-btn hvr-bounce-in">
+                            <a href="https://disk.yandex.ru/i/6toVCB5s3LrPhK" class="download-link-house1" download="">Скачать
+                                PDF-план проекта (2,5 мб)</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="project second-block">
+                <div class="project-title-hidden">Modern house 003</div>
+                <div class="project-description second-block">
+                    <div class="project-title">Modern house 003</div>
+                    <div class="project-text">
+                        Этот проект представляет собой красивый и удобный одноэтажный дом с многоскатной кровлей,
+                        эркером и камином на террасе. Его внешний традиционный архитектурный стиль прекрасно сочетается
+                        с современной практичной планировкой интерьера.
+                    </div>
+                    <div class="project-rounds">
+                        <div class="project-round-first">134 м2</div>
+                        <div class="project-round-second"><span>4</span> спальни</div>
+                        <div class="project-round-third"><span>2</span> санузла</div>
+                    </div>
+                    <div class="project-action consult go-to-order">
+                        <button class="btn second-section-btn hvr-bounce-in">Получить консультацию</button>
+                    </div>
+                    <div class="project-action download">
+                        <button class="btn second-section-btn hvr-bounce-in">
+                            <a href="https://disk.yandex.ru/i/s40rxm593LnEgM" class="download-link-house2" download="">Скачать
+                                PDF-план проекта (2,5 мб)</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="project-images second-block">
+                    <div class="project-images-single">
+                        <a href="lightzoom/image/ourprj_5.png" class="lightzoom">
+                            <img src="images/our_prj5.png">
+                        </a>
+                    </div>
+                    <div class="project-images-row">
+                        <a href="lightzoom/image/ourprj_2.png" class="lightzoom">
+                            <img src="images/our_prj6.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_3.png" class="lightzoom">
+                            <img src="images/our_prj7.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_4.png" class="lightzoom">
+                            <img src="images/our_prj8.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="more-blocks hvr-bounce-in">
+                <a class="more-blocks-link">Посмотреть ещё 3 проекта</a>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="9"
+                     viewBox="0 0 16 9">
+                    <image id="next" width="16" height="9"
+                           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAAw0lEQVQokZXQsUoDcRDE4U850MqHkpRiIXaCRbrYBRufQDjBSlBQSBGwMRYiQpo8im9hpSDKhI1cJCKZam9mfsvef6NtL15xiRvraYDTTYxwjf4aeL+YUYNz7OAO77j/Bz6qbhu2KfMM2xjjDc9/wPvVuSpG0wmH2MIjDvDyC96r7La6c+UNFvrCCSZ4wG4nyxwvWTrpztW9YLHkuN4hF/TKz5zfSvYDr1oQfVYx507Lm5WXbEmrFkQfOMRTfWeOtyx8A4pzKWEB8pL3AAAAAElFTkSuQmCC"/>
+                </svg>
+            </div>
+            <div class="project first-block hidden">
+                <div class="project-title-hidden">Modern house 003</div>
+                <div class="project-images first-block">
+                    <div class="project-images-single">
+                        <a href="lightzoom/image/ourprj_1.png" class="lightzoom">
+                            <img src="images/our_prj1.png">
+                        </a>
+                    </div>
+                    <div class="project-images-row">
+                        <a href="lightzoom/image/ourprj_2.png" class="lightzoom">
+                            <img src="images/our_prj2.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_3.png" class="lightzoom">
+                            <img src="images/our_prj3.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_4.png" class="lightzoom">
+                            <img src="images/our_prj4.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="project-description first-block">
+                    <div class="project-title">Modern house 003</div>
+                    <div class="project-text">
+                        Этот проект представляет собой красивый и удобный одноэтажный дом с многоскатной кровлей,
+                        эркером и камином на террасе. Его внешний традиционный архитектурный стиль прекрасно сочетается
+                        с современной практичной планировкой интерьера.
+                    </div>
+                    <div class="project-rounds">
+                        <div class="project-round-first">134 м2</div>
+                        <div class="project-round-second"><span>4</span> спальни</div>
+                        <div class="project-round-third"><span>2</span> санузла</div>
+                    </div>
+                    <div class="project-action consult">
+                        <button class="btn second-section-btn go-to-order hvr-bounce-in">Получить консультацию</button>
+                    </div>
+                    <div class="project-action download">
+                        <button class="btn second-section-btn hvr-bounce-in">
+                            <a href="https://disk.yandex.ru/i/6toVCB5s3LrPhK" class="download-link-house1" download="">Скачать
+                                PDF-план проекта (2,5 мб)</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="project second-block hidden">
+                <div class="project-title-hidden">Modern house 003</div>
+                <div class="project-description second-block">
+                    <div class="project-title">Modern house 003</div>
+                    <div class="project-text">
+                        Этот проект представляет собой красивый и удобный одноэтажный дом с многоскатной кровлей,
+                        эркером и камином на террасе. Его внешний традиционный архитектурный стиль прекрасно сочетается
+                        с современной практичной планировкой интерьера.
+                    </div>
+                    <div class="project-rounds">
+                        <div class="project-round-first">134 м2</div>
+                        <div class="project-round-second"><span>4</span> спальни</div>
+                        <div class="project-round-third"><span>2</span> санузла</div>
+                    </div>
+                    <div class="project-action consult go-to-order">
+                        <button class="btn second-section-btn hvr-bounce-in">Получить консультацию</button>
+                    </div>
+                    <div class="project-action download">
+                        <button class="btn second-section-btn hvr-bounce-in">
+                            <a href="https://disk.yandex.ru/i/s40rxm593LnEgM" class="download-link-house2" download="">Скачать
+                                PDF-план проекта (2,5 мб)</a>
+                        </button>
+                    </div>
+                </div>
+                <div class="project-images second-block">
+                    <div class="project-images-single">
+                        <a href="lightzoom/image/ourprj_5.png" class="lightzoom">
+                            <img src="images/our_prj5.png">
+                        </a>
+                    </div>
+                    <div class="project-images-row">
+                        <a href="lightzoom/image/ourprj_2.png" class="lightzoom">
+                            <img src="images/our_prj6.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_3.png" class="lightzoom">
+                            <img src="images/our_prj7.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_4.png" class="lightzoom">
+                            <img src="images/our_prj8.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project first-block hidden">
+                <div class="project-title-hidden">Modern house 003</div>
+                <div class="project-images first-block">
+                    <div class="project-images-single">
+                        <a href="lightzoom/image/ourprj_1.png" class="lightzoom">
+                            <img src="images/our_prj1.png">
+                        </a>
+                    </div>
+                    <div class="project-images-row">
+                        <a href="lightzoom/image/ourprj_2.png" class="lightzoom">
+                            <img src="images/our_prj2.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_3.png" class="lightzoom">
+                            <img src="images/our_prj3.png">
+                        </a>
+                        <a href="lightzoom/image/ourprj_4.png" class="lightzoom">
+                            <img src="images/our_prj4.png">
+                        </a>
+                    </div>
+                </div>
+                <div class="project-description first-block">
+                    <div class="project-title">Modern house 003</div>
+                    <div class="project-text">
+                        Этот проект представляет собой красивый и удобный одноэтажный дом с многоскатной кровлей,
+                        эркером и камином на террасе. Его внешний традиционный архитектурный стиль прекрасно сочетается
+                        с современной практичной планировкой интерьера.
+                    </div>
+                    <div class="project-rounds">
+                        <div class="project-round-first">134 м2</div>
+                        <div class="project-round-second"><span>4</span> спальни</div>
+                        <div class="project-round-third"><span>2</span> санузла</div>
+                    </div>
+                    <div class="project-action consult">
+                        <button class="btn second-section-btn go-to-order hvr-bounce-in">Получить консультацию</button>
+                    </div>
+                    <div class="project-action download">
+                        <button class="btn second-section-btn hvr-bounce-in">
+                            <a href="https://disk.yandex.ru/i/6toVCB5s3LrPhK" class="download-link-house1" download="">Скачать
+                                PDF-план проекта (2,5 мб)</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="hide-more-blocks hvr-bounce-in">
+                <a class="hide-more-blocks-link">Свернуть последние 3 проекта</a>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="9"
+                     viewBox="0 0 16 9">
+                    <image id="next" width="16" height="9"
+                           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAAw0lEQVQokZXQsUoDcRDE4U850MqHkpRiIXaCRbrYBRufQDjBSlBQSBGwMRYiQpo8im9hpSDKhI1cJCKZam9mfsvef6NtL15xiRvraYDTTYxwjf4aeL+YUYNz7OAO77j/Bz6qbhu2KfMM2xjjDc9/wPvVuSpG0wmH2MIjDvDyC96r7La6c+UNFvrCCSZ4wG4nyxwvWTrpztW9YLHkuN4hF/TKz5zfSvYDr1oQfVYx507Lm5WXbEmrFkQfOMRTfWeOtyx8A4pzKWEB8pL3AAAAAElFTkSuQmCC"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="technologies  wow animate__animated animate__fadeInDown">
+    <div class="container">
+        <h1 class="technologies-title">Технологии строительства</h1>
+        <div class="technologies-image" id="technologies">
+            <!--            <img src="images/technologies.png" alt="Technologies">-->
+            <div class="mark1">
+                <div class="mark1-description">
+                    <div class="mark1-description-title">Диагональный раскос</div>
+                    <div class="mark1-description-text">Система диагональных раскосов позволяет создать оптимальный
+                        вентиляционный зазор для капитальных стен и наружной отделки
+                    </div>
+                </div>
+                <div class="mark1-element1">
+                    <img src="images/technologies/1-1.png" class="element1-1"/>
+                    <div class="element1">
+                        <div class="element1-round">
+                            <div class="element1-round-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mark1-description-hidden">
+                    <div class="mark1-description-hidden-rectangle"></div>
+                    <div class="mark1-description-hidden-title">Диагональный раскос</div>
+                    <div class="mark1-description-hidden-text">Система диагональных раскосов позволяет создать
+                        оптимальный
+                        вентиляционный зазор для капитальных стен и наружной отделки
+                    </div>
+                </div>
+            </div>
+            <div class="mark2">
+                <div class="mark2-description">
+                    <div class="mark2-description-title">Неразрывний каркас</div>
+                    <div class="mark2-description-text">Монтаж стен этажей внутри дома и по всему периметру выполняется
+                        единым массивом.
+                    </div>
+                </div>
+                <div class="mark2-element2">
+                    <img src="images/technologies/2-1.png" class="element2-1"/>
+                    <div class="element2">
+                        <div class="element2-round">
+                            <div class="element2-round-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mark2-description-hidden">
+                    <div class="mark2-description-hidden-rectangle"></div>
+                    <div class="mark2-description-hidden-title">Неразрывний каркас</div>
+                    <div class="mark2-description-hidden-text">Монтаж стен этажей внутри дома и по всему периметру
+                        выполняется
+                        единым массивом.
+                    </div>
+                </div>
+            </div>
+            <div class="mark3">
+                <div class="mark3-element3">
+                    <img src="images/technologies/3-1.png" class="element3-1"/>
+                    <div class="element3">
+                        <div class="element3-round">
+                            <div class="element3-round-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mark3-description">
+                    <div class="mark3-description-title">5 камерные окна</div>
+                    <div class="mark3-description-text">Обеспечивает исключительную сохранность тепла в доме
+                    </div>
+                </div>
+                <div class="mark3-description-hidden">
+                    <div class="mark3-description-hidden-rectangle"></div>
+                    <div class="mark3-description-hidden-title">5 камерные окна</div>
+                    <div class="mark3-description-hidden-text">Обеспечивает исключительную сохранность тепла в доме
+                    </div>
+                </div>
+            </div>
+            <div class="mark4">
+                <div class="mark4-element4">
+                    <img src="images/technologies/4-1.png" class="element4-1"/>
+                    <div class="element4">
+                        <div class="element4-round">
+                            <div class="element4-round-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mark4-description">
+                    <div class="mark4-description-title">Плитная ветрозащита</div>
+                    <div class="mark4-description-text">Используемая влагостойкая ветрозащитная плита обеспечивает
+                        дополнительную шумоизоляцию стен
+                    </div>
+                </div>
+                <div class="mark4-description-hidden">
+                    <div class="mark4-description-hidden-rectangle"></div>
+                    <div class="mark4-description-hidden-title">Плитная ветрозащита</div>
+                    <div class="mark4-description-hidden-text">Используемая влагостойкая ветрозащитная плита
+                        обеспечивает
+                        дополнительную шумоизоляцию стен
+                    </div>
+                </div>
+            </div>
+            <div class="mark5">
+                <div class="mark5-element5">
+                    <img src="images/technologies/5-1.png" class="element5-1"/>
+                    <div class="element5">
+                        <div class="element5-round">
+                            <div class="element5-round-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mark5-description">
+                    <div class="mark5-description-title">Сборка силовых узлов</div>
+                    <div class="mark5-description-text">Основные силовые узлы наших домов оцинкованы, что позволяет быть
+                        уверенными в исключительной прочности и долговечности конструкции
+                    </div>
+                </div>
+                <div class="mark5-description-hidden">
+                    <div class="mark5-description-hidden-rectangle"></div>
+                    <div class="mark5-description-hidden-title">Сборка силовых узлов</div>
+                    <div class="mark5-description-hidden-text">Основные силовые узлы наших домов оцинкованы, что
+                        позволяет быть
+                        уверенными в исключительной прочности и долговечности конструкции
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="steps  wow animate__animated animate__fadeInDown">
+    <div class="container">
+        <h1 class="steps-title">6 шагов к вашему новому дому</h1>
+        <div class="steps-block">
+            <div class="step first-step">
+                <div class="step-image">
+                    <div class="step-number">01</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50"
+                         height="50" viewBox="0 0 50 50">
+                        <image id="chat_1_" width="50" height="50"
+                               xlink:href="data:img/png;base64,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"/>
+                    </svg>
+                </div>
+                <div class="step-description">
+                    <div class="step-description-title">Заявка на сайте</div>
+                    <div class="step-description-text">
+                        Вы <span>оставляете заявку</span> на сайте, или звоните нам +380 (96) 73-67-281
+                    </div>
+                </div>
+            </div>
+            <div class="step second-step">
+                <div class="step-image">
+                    <div class="step-number">02</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49"
+                         height="50" viewBox="0 0 49 50">
+                        <image id="phone-call" width="49" height="50"
+                               xlink:href="data:img/png;base64,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"/>
+                    </svg>
+                </div>
+                <div class="step-description">
+                    <div class="step-description-title">Звонок менеджера</div>
+                    <div class="step-description-text">
+                        Мы связываемся с вами для уточнения деталей и выбираем время для встречи
+                    </div>
+                </div>
+            </div>
+            <div class="step third-step">
+                <div class="step-image">
+                    <div class="step-number">03</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57"
+                         height="57" viewBox="0 0 57 57">
+                        <image id="conference" width="57" height="57"
+                               xlink:href="data:img/png;base64,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"/>
+                    </svg>
+
+                </div>
+                <div class="step-description">
+                    <div class="step-description-title">Встреча</div>
+                    <div class="step-description-text">
+                        Встречаемся на вашем участке и делаем все необходимые замеры
+                    </div>
+                </div>
+            </div>
+            <div class="step fourth-step">
+                <div class="step-image">
+                    <div class="step-number">04</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="53"
+                         height="54" viewBox="0 0 53 54">
+                        <image id="contract" width="53" height="54"
+                               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA2CAYAAABnctHeAAAE1UlEQVRogeWaa4xdUxTHfzOdGqKEXhqvpEGY+IAPCHcqYjQZ8a6oEPSDqOjE9SYlISFtGCSC3HiED9QUHypCBBFNpWncIETaSok20ZiqpL1CwyidIqtZR1b2PXefc/Y5594r/snk3H328z9rnbXWXnv37fz4ZhQjgBROBgbpDP4EvgGeB94JmbFSrbe8G9DnUmC8Q0RcnABcDDwN3A78nXfAfuCcLhKyuBV4BujLO5BIqmbKPwIP6bMMHAhMmHHvUDLHankJ8CtwT15Sp5jyvcDLJRESHOKUXwJWAR8Bx+u7u4G9upYgiPrtbzpuLZFQO0wC5wJbTH2ub7y/tKVmQztii0MG6xVSKLHzgW3m3XiIe+klUqik5qv/ElSAM7IOMpCiTZkYA36PGX8XcJj+jp7/GVIPlzFop9VvNzBd9iSdlpSQul7/Znjana6OOgjdUL8JJ6qIw5fAqaET9Jr1KwRJkpoNHFzCvNPqj/JE5LKu4WajJs8NlWp9U1ThI3UVsDJB9/PgLWBBYH+JDx+0312zUVsNLKpU69t96nd5iYQElwH7BfR7Eng8xpCI017TbNRm+UitAKYCJk2LF0zkkBYSNt1m2kr/pikPSb1P/d7VrUKwafVgD/BbAKGlpiwh1ajuLGQLc52+vyjJUMjkPxdCIx+WO4S2alQ/KTmKZqP2tiE1p9thUhrIznjEaSeB7tFCqtmoDWpuI8J3PlKSVXoWOCbHgkTK9wHv5RjDJSSYBXygCRvZ+g+buld8pETc83IsRjBXLVUeUhG2acbpEQ0axD+tddrIPBM+UhsKWIhgfUAfN6O0Q7+hzUpuRUw0tAZYWKnW9/pIPQZ8XoD6ZZXSmJMM2qk+aLOWXwduAc40bdaJKlaq9X0uyEdKQpgPMy4oL8Y092cJnWe0ZoZKyRL61BKixwLaRQ6hn9oQusa0EUKjlWr9FzuQT1IHqZjn5FioONjngO8T2l2rDjSCbOcvNIT6NN9uCX0WR4gEUsvVR+TFcBuzbAnZD3+XRgqfGEIiwRtMn40SOQAthEhQv6JOPg7w1C2MsWQLYggtMfUbVS13tBvUJ6n7NaCdnX79LZBM0VNt6i4BXo35xz6gpKY0Is9EiARSYnnuDCSThEGV0MyYdiN6VvWFo/5RAOslRBet36g5LJCg+QLgfVMvxO4y5S3qfLenGTwpoJXkx6HZ1/wvdqvZ/ct5f6X5vVoJrVUJuUYlIjSZdlIfKTkqbT17zI4XgRtNr5kaiEZYpc8pPdJxSUkMmppQEqmzCyBETFA830h/WsOfZSq9oZj+claVCT5SYnlOK8D5LnPeWdUbUOkUCh8pMasnFjyfhDqXJrT5WrcVR4VO0mnrd1KbUwwJo54AztI2iWbbh05v57/VexNDap7fAF4DGkVcNYjQaVJ/qJs4Tsm5pr4QdCPxIsQ2pWgXjP/lAUFWLFa/lHRrZY/e11hX8Pz7UCSpeZpKTosrgMNDnGsSilS/rB99KUaCgiXV0NRvmisC05oVKlxKlPBNrdS/rqJftwcR5nZ7QfqPPtKUxQVkHmC9iY7HNadQ1tW4JMi25GoniJYtfCYM6J4pipyP0EOBXsGbKdJrLejXHWfw3boS8RVwU8jwkaF4VLfdnb4YHIcf9JBbNCjraSMA/wANUPrMgRx9uQAAAABJRU5ErkJggg=="/>
+                    </svg>
+
+                </div>
+                <div class="step-description">
+                    <div class="step-description-title">Договор</div>
+                    <div class="step-description-text">
+                        Заключаем договор с четко указанными сроками
+                    </div>
+                </div>
+            </div>
+            <div class="step fifth-step">
+                <div class="step-image">
+                    <div class="step-number">05</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50"
+                         height="50" viewBox="0 0 50 50">
+                        <image id="technics" width="50" height="50"
+                               xlink:href="data:img/png;base64,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"/>
+                    </svg>
+
+                </div>
+                <div class="step-description">
+                    <div class="step-description-title">Строительство</div>
+                    <div class="step-description-text">
+                        Наша бригада приступает к выполнению работ
+                    </div>
+                </div>
+            </div>
+            <div class="step sixth-step">
+                <div class="step-image">
+                    <div class="step-number">06</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54"
+                         height="52" viewBox="0 0 54 52">
+                        <image id="house" width="54" height="52"
+                               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA0CAYAAADBjcvWAAAEFElEQVRoge2aW6hUVRjHf2eOiikexSkxDQkSIQUVHzqMd/FalIJG2pOg4kOOqQ/1UOaDUqGEig4EJeWLly6KiBcwSPPYGRFvqA8hxwpLLXMiK82yk7Hkv+FjHPflnL3nnA3ze9rz7bXXWv/Za63v+9badTeal1AFcsAHwK/AAuBSXE1mc4WK9i5VEPUC8AnwiH43A88Cp5NsNJNk5cBCYI8R5egHHAGmJtlwksLeAraYNtwwvKPrXsB+YF5SjSchrB5wA3+1sX2veTYN+F22rsAOYHkCfYhdWDfNJ7sinQPGABeBJmAscMXc3wCsA+ri7EicwnoDh4A5xvYVMB64amzngdHAN8b2GvCx3mIsxCVsAHAUmGBsn2vo3axQ/jIwDjhubPOBvUCPziJsCPA1MNzYNmth+MfnuRvAZOCAsc0ADgOPtbdT7RX2jEQ9aWwrgVeB1hDP3wZmahjaOo+V1RmZ9gibIX/0qH7/J7/1dsR6WvXcu8Y2RI58RLWFefPBc7x/6Z//qI313QPeAJbpD3I8XmHehqYtwl4HtpoVrKS5sr+NoiybgJeBu7I1aKV9MUlhdfI5a43tB/mlYtSGffhUw9xz5JV8YyBhhbnKt5dFCRcq+KO4+FJD8GfVlzHRTChHHkZYpbjOiyB+TECUx1n9cS3G5sWf9UEPBwnzIvEpxrbbx/HGzbcSd9LUu0B98HXkfsIGa8kdZWzvAy+ZKL0a/AJM1CLi4VbgL4C+UYWNkuN9ytjeAV4J6Xjj5pYS1m2mXvcmm0rF/BNhhU3V8OtXZv+sAwRZXHj2XpltqIs3S8X8sPLC5cLmaqHoVZWuxsNAF4KVivmxDxPmlvKdxvE6P/JnJxZ0xzjyPm4Olor5Wd7NjPzCOjlfj6tKK0od0uVwOB/3vOYfCu92l4r5RWiXaq0SPQ+X6U5XOt/ZOaQV86CCcfeiPiwV8z0zmlceJ+R40yDqPtlc4aT2U74z5hVO2EbgD2AXMEl+I1Vkc4UWLf+n1O99Gc2tBkXQt9MmyiObK/wENAL9s7lCvho7wVUjmyu0eoFz0jvBHUZNWNpIYo51197Fc9pE9cOlPvu0JfB3nJ2IW1gX7RNOivDMeOV3081GTruJeyjOiSjKY0pbNmz8iPuNjTHXe8viz0osBWbL3qiNnFiIW1iDuT6svM6PkUZY4D5GFGrLfdqoCUsbNWFpoyYsbdSEpY2asE5CT9ONf/26FBQE212rMOnIIHN9L0R5e3IzVEGxH4vNvRa/gkHC3Kn907peH6KjlnMhypw11+6U50yE+nf53QwaimuAaxEa8zgYImVBR74HQpQrxx1I2o9eHiDojbmv1FwC6A613ScPNt+qxHV9Q+XKhxmKDpePrVL23T+g7G9KYN/0nWPA/1LCydH6JbmTAAAAAElFTkSuQmCC"/>
+                    </svg>
+
+                </div>
+                <div class="step-description">
+                    <div class="step-description-title">Ваш дом</div>
+                    <div class="step-description-text">
+                        Вы заежаете в свой новый дом!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="sliders  wow animate__animated animate__fadeInDown">
+    <div class="container">
+        <h1 class="slider-title">Построили более 200 домов за 10 лет</h1>
+        <div class="gallery">
+            <div class="gallery-container">
+                <div>
+                    <img data-lazy="images/slider1.png" class="gallery-item gallery-item-first">
+                    <div class="gallery-item-text">
+                        <div class="gallery-item-text-block-first">
+                            <span  class="bold-text">Modern house 001</span>
+                            <span>Киевская обл., г. Борова, 15</span>
+                        </div>
+                        <div class="gallery-item-text-block-line"></div>
+                        <div class="gallery-item-text-block-second">
+                            <div class="gallery-item-text-block-second-hidden-first">
+                                8,4 м Х 10,5 м
+                            </div>
+                            <div class="gallery-item-text-block-second-hidden-second">
+                                154 м2
+                            </div>
+                            <div class="bold-text first-row">Габариты:
+                                <span>8,4 м Х 10,5 м</span>
+                            </div>
+                            <div class="bold-text second-row">Площадь:
+                                <span> 154 м2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img data-lazy="images/slider2.png" class="gallery-item gallery-item-second">
+                    <div class="gallery-item-text">
+                        <div class="gallery-item-text-block-first">
+                            <span  class="bold-text">Modern house 002</span>
+                            <span>Киевская обл., г. Ирпень, 10</span>
+                        </div>
+                        <div class="gallery-item-text-block-line"></div>
+                        <div class="gallery-item-text-block-second">
+                            <div class="gallery-item-text-block-second-hidden-first">
+                                8,0 м Х 9,5 м
+                            </div>
+                            <div class="gallery-item-text-block-second-hidden-second">
+                                120 м2
+                            </div>
+                            <div class="bold-text first-row">Габариты:
+                                <span>8,0 м Х 9,5 м</span>
+                            </div>
+                            <div class="bold-text second-row">Площадь:
+                                <span> 120 м2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img data-lazy="images/slider3.png" class="gallery-item gallery-item-third">
+                    <div class="gallery-item-text">
+                        <div class="gallery-item-text-block-first">
+                            <span  class="bold-text">Modern house 003</span>
+                            <span>Московская обл., г. Домодедово, 11</span>
+                        </div>
+                        <div class="gallery-item-text-block-line"></div>
+                        <div class="gallery-item-text-block-second">
+                            <div class="gallery-item-text-block-second-hidden-first">
+                                7,4 м Х 9,5 м
+                            </div>
+                            <div class="gallery-item-text-block-second-hidden-second">
+                                131 м2
+                            </div>
+                            <div class="bold-text first-row">Габариты:
+                                <span>7,4 м Х 9,5 м</span>
+                            </div>
+                            <div class="bold-text second-row">Площадь:
+                                <span> 131 м2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img data-lazy="images/slider4.png" class="gallery-item gallery-item-fourth">
+                    <div class="gallery-item-text">
+                        <div class="gallery-item-text-block-first">
+                            <span  class="bold-text">Modern house 004</span>
+                            <span>Московская обл., г. Реутов, 1</span>
+                        </div>
+                        <div class="gallery-item-text-block-line"></div>
+                        <div class="gallery-item-text-block-second">
+                            <div class="gallery-item-text-block-second-hidden-first">
+                                6,4 м Х 8,5 м
+                            </div>
+                            <div class="gallery-item-text-block-second-hidden-second">
+                                100 м2
+                            </div>
+                            <div class="bold-text first-row">Габариты:
+                                <span>6,4 м Х 8,5 м</span>
+                            </div>
+                            <div class="bold-text second-row">Площадь:
+                                <span> 100 м2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img data-lazy="images/slider5.png" class="gallery-item gallery-item-fifth">
+                    <div class="gallery-item-text">
+                        <div class="gallery-item-text-block-first">
+                            <span  class="bold-text">Modern house 005</span>
+                            <span>Московская обл., г. Дубна, 15</span>
+                        </div>
+                        <div class="gallery-item-text-block-line"></div>
+                        <div class="gallery-item-text-block-second">
+                            <div class="gallery-item-text-block-second-hidden-first">
+                                9,4 м Х 11,5 м
+                            </div>
+                            <div class="gallery-item-text-block-second-hidden-second">
+                                184 м2
+                            </div>
+                            <div class="bold-text first-row">Габариты:
+                                <span>9,4 м Х 11,5 м</span>
+                            </div>
+                            <div class="bold-text second-row">Площадь:
+                                <span> 184 м2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="payment  wow animate__animated animate__fadeInDown">
+    <div class="container">
+        <h1 class="payment-title">Гарантии и условия оплаты</h1>
+        <div class="payment-container" id="payment">
+            <div class="payment-blocks">
+                <div class="payment-block">
+                    <div class="payment-block-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50"
+                             height="51" viewBox="0 0 50 51">
+                            <image id="calendar" width="50" height="51"
+                                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAzCAYAAADVY1sUAAAES0lEQVRoge2aXYhVVRSAv7mmo2QaDf6EWaKRL5UDiXJTMIt+ph4GRNAKJWPKBwXRHnwr6CWEwqQJH6IS1EII8cF+wfIhjBBFojAirRxqKId0dAa1xmusWLv2Xex97j6Xc7l31A8OM2edffZa656199p7ndM2cGgdOXgBeAY4AGwEruS5OYE2YCvwELADeK3WLR3l3n//3pBDyRzgVf3/buATPYrkUWCD9ie69gEnUvov5TBipjmfXrAToT6tzih5HGlprhpH7Bi5RQfarQEn7zTnjwA3F2zPAnO+HOg0sgrQrxPOn07oZi0x+kVgMzC+YOMaxUVgC/ByR7m34p7IduD5UeKAQ37wlzR61soTWQp83hq21c2D8kR6zN079fjbyDs1WTm2NCCPPKbh7ZCke8y0GQus0sPRI47M8wQnNXNXEpR+DxwsxPz/mWXOj0V0yEBfBMzW83kyyCd6DfoSnWg2FbXVMTFPHil6XVWozjyOSChd8s6P57MpCb/PS6oziTyLxt+BbuBJjdGvG+CI9Llak/L7qrNwR4RP9WgkbtbMxfVFY6thQ6uzAbmhUVQtJq0jk4Elo8SRKq7a0LoMDDXJlrzIimSMO7GOfAk80ASj6uGgPwyuT7+tRmpmnwI8B0z1ZIOagX+M3CP77bIXxzL+vgI+iLSXmsAqnTkdfwBvAadrGZjqiBTK7g/I1wJ3mMWk8BSwO9LX08B7Rtau43NaoP0TuvfIJDW07o3Ip5mn5Lgno6/QtakRJ7J0V5HqyNaIfI/Z4Dh2AQMB+YBes/RpX3l0V5EaWlIqegO40ZP9BfwWaf8dcJtWOHz6A2HoWAlsAsZ5suGU8UHOZfzp1E4VMfjnHO2F2A9Tk2tu+m3TWWuKJzuvM00sVG7XFar7sSpaFTkVaS8z12LgJk8mEXAoZe+e6sjbwJqAXPLC4kDlRZz+wsQ7Oq6WqnE+JW1fDuh4F3i2loGpobUiIhfFMwLy7oATqKw7IJ8RcSJLdxWpjsRKqsd1JrIciITDFb1m6c+oyiSVc1NDa7lm2EmeTMbGx8BIoP1nwPxAMvsGOBpoP6Lh2KVjxXEO+LBIR8TovYltHUcjRsc4qyWgurjmpl+0Cu5n9ot6ZDHJTL/narQfb140DQfeCgRJfSLrdQt8xjtEyeuR9rO03DnotR9Uma24O6SvYaNjSHUX5sgrgem0pO/EQ6+pZe8yNyCfq9cs07Uva8841V2TVEdiL+0H9bD8lNFX6FqsnyzdVaSOkWX6i/m7twvAO/rXItl4AnCfkR/Raxbp42HN4BOMg9uKdOSk92lFCpd12Z+Hw3rURckktPZ6O2oCvq0jJbPDk1BYOAqcWGjCtk9Ca79XlBurK9MfMpbnzUaexF1motov79ml9PitVkNGI7/IZ1clTTpdGRueVkZs7uoo9w65WUuW0PIxmXyY8rjuD/4rELcYMiP+CnwEvNlR7j0P8A/p0926GSgJQgAAAABJRU5ErkJggg=="/>
+                        </svg>
+                    </div>
+                    <div class="payment-block-description">
+                        <div class="payment-block-description-title">Гарантия сроков</div>
+                        <div class="payment-block-description-text">
+                            <span>Юридическая гарантия сроков.</span> До 0.1 % от суммы за каждый день просрочки.
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-block">
+                    <div class="payment-block-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="47"
+                             height="57" viewBox="0 0 47 57">
+                            <image id="insurance" width="47" height="57"
+                                   xlink:href="data:img/png;base64,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"/>
+                        </svg>
+                    </div>
+                    <div class="payment-block-description">
+                        <div class="payment-block-description-title">Страховка</div>
+                        <div class="payment-block-description-text">
+                            <span>Гарантия 10 лет. Страховка дома. Обработка</span> дома. Сервисное обслуживание.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-rounds">
+                <div class="payment-round">
+                    <div class="payment-round-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60"
+                             height="67" viewBox="0 0 60 67">
+                            <image id="writing" width="60" height="67"
+                                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABDCAYAAADAiGZmAAAFUElEQVRoge2be4wdUxzHP1236rXVZlSKVsQzWok/SBgSYq2mHi0NVRGJP6j1uIl/BEE9llBR/41HUkSFP0SLbFejRYNgVPpPqcQjkpW0lVhDCba0XfK7/V25pufMnTN37tzZzX6Tm5s5c86Z85nzmN/5nXMm/fTJbVg0GbhQf3OAQ20RC9RfwNfAB8A6YMTzA6enm4APAPqA+4CjSgBp007gSWCF5we70ibqil3PADYCT5UcVjQNeBjYHIXVE9MmagQW2I+B89pTvrZpLhBGYfXkNA/oavhfDZw0xmDrOgIYjMLqYc0iVvT/5oSalb4yCAwBe3MvanpNAmYBlwAzDamksu4H7kzKUQatisIcY7i/ErgD+K1guCQdCNwDPGCII4PXsZ4fDNvSS1PuTYC9qWSwor+BB4G7DfcOAq5OSizAPYbwnVqzZdYTwFeG8pl4/gc81xC+toQ1G9co8Joh/NSkRF0WC2qoLUXMX98Ycjwk6Slxw6Ou0XLy7affXRPYgMetJoDHuyoZ+I4Eji7wvYgRsT2vzFyBHwPuUjOvSK0CbsjDtHVp0r5aN0XDiq5vZkGllQuwyUApUokGRTuAN3UY+LM8MnEB/gK4pQMmp8yAHtIpastyHbSe1VlUd/5cVv0B7M4rsyyfpb06mxqTmrC0xrsmTMsmOgO4Fzi+wDLuUIf7e3lk5gI8U530U/N4sINOV7/bmcDnsWTfGbIxhf0nlyZ9cQdg65J1risM4WIbPAL8o9fSGm5PysgF+GfnYuarX0y5eX6wDJittv4Jnh9sTXqqS5N+S5dizu0ArKwYvmS76fnB9rRTSBfgPeoCXVTwQpvU7Jos/iuTXEdpcYK/mseDO6UJw2O8K8vkoXSKwmq3rn7O1k/U98CHnh/8GS+rK7DEny/Df4uuHtmr8ZF+R1vRrCis9gPX6be6UbuisPo80O/5wY9ZgCXu27rJJS8tBZ7LmNcFwOu69cEkWUmUDSyLo7C60PODmsfGpQ/PzxlW9HjGdD1qF9hgGyVu5fX1fSAuwDMyFi5J04Epjml61N1zsEOaw4FncAR+R90teWpQ+3NesDJYbbPc643C6lkufXibzlr6tZm0qtCyip8FdgS41vODN9k3aosf+wVDhV7uOkp/CszLAdZVzWpWnHw/1C88P1gVhVWZ3S2JxTttLBgeafqsTFs3SJNtCDMtlneX3fBwGaDq0PPUaW/6ogyXGbhZn60YjI0aNDAAnGNIt6msTboZ7GXAVRYH/VS1vOKSuGvKCJwGdqPWog3apJWeHwyVDTgtbF1pobfounappoeusDV5fjCg4DaJj+sizw9qHpOyAGeCZZ+RsRy40pKvwPY07r0sA3BmWGB5vakatB8sJQA+pUhYSgDcVyQsJQBeaAhrGywdBp6jrqK4bm0XLAnARbyIBYYw+Z6+YYnfMiwKZprUH9csYQ4yNWc5gPWrITwXWBT4S0P4gjavFIq76GxD+NrYdUX9XrnAosCm/iLOsRVpM8mgSy3dZkBbV596JKOEUyrOsOgbfFdX3uIHPZbqfztOtZia826d2qU5O7VVDRYnWBRYVgUf1eN3cQn0YodzSyPqu96SEGeKxU00ud2wNDjiZcPZEsthrWmW+aVN8vKusRzAQD0RWU+qtgRLQz8a1WnWt1kziuW5LOF+b4Y8ZeR+ETi/FVhiSy3Durq/OocDl9MT7qXZtigLYpu1e2xQb+meFstUU9ynNaxNptXzwy8n3HsFuNEQvkPh1qvTP8r47ESZnHgyMD2tm0hdT4hL15BakX1VNr0vDnE94Cm1JsaGgLa6kthcwL8CNEr4qV3N6AAAAABJRU5ErkJggg=="/>
+                        </svg>
+
+                    </div>
+                    <div class="payment-round-description">
+                        <div class="payment-round-description-title">Гарантия фиксированной сметы</div>
+                        <div class="payment-round-description-text">Все непредсказуемые расходы компенсируем за свой
+                            счет
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-round">
+                    <div class="payment-round-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76"
+                             height="76" viewBox="0 0 76 76">
+                            <image id="people" width="76" height="76"
+                                   xlink:href="data:img/png;base64,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"/>
+                        </svg>
+                    </div>
+                    <div class="payment-round-description">
+                        <div class="payment-round-description-title">Без посредников</div>
+                        <div class="payment-round-description-text">Мы сами выполняем все работы и несем за них
+                            ответственность
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-round">
+                    <div class="payment-round-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="69"
+                             height="69" viewBox="0 0 69 69">
+                            <image id="coin" width="69" height="69"
+                                   xlink:href="data:img/png;base64,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"/>
+                        </svg>
+                    </div>
+                    <div class="payment-round-description">
+                        <div class="payment-round-description-title">Оплата по факту</div>
+                        <div class="payment-round-description-text">Оплата всех работ по факту их выполнения
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-action download">
+                <button class="btn payment-btn hvr-bounce-in">
+                    <a href="https://amulex.ru/docs/pdf/1379.pdf" class="download-link-example" download="">Скачать
+                        PDF-пример договора (1,3 мб)</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="order  wow animate__animated animate__fadeInDown">
+    <div class="container">
+        <div class="order-block">
+            <div class="order-image">
+                <img src="/images/form-image.png">
+            </div>
+            <form class="order-form" id="wdh_form" method="POST" action="wdh_send_form.php">
+                <h1 class="order-title">Получите индивидуальную консультацию</h1>
+                <input type="text" placeholder="Ваше имя" name="name" class="order-input" id="name-input">
+                <div class="name-error error">Введите имя</div>
+                <input type="tel" placeholder="Ваш телефон" name="phone" class="order-input" id="phone-input">
+                <div class="phone-error error">Введите номер телефона</div>
+                <button class="btn order-btn hvr-bounce-in" id="create-order" type="submit">Нужна консультация</button>
+                <div class="agreement">
+                    <div class="checkbox hvr-bounce-in">
+                        <input type="button" id="check-btn" class="check-input">
+                        <svg class="check-mark" xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink" width="25"
+                             height="18" viewBox="0 0 25 18">
+                            <image id="tick" width="25" height="18"
+                                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAASCAYAAACuLnWgAAAA50lEQVQ4jbXSrwrCUBTH8SO+hRitFsuiINh8AGHVsmAzDB9AbEYRrEbfwocwmGRYDGIxCPKVq3d4GM65P/fAHdzds33Gzq8GiKMaishCRLZiEAfLBx68K3IBjBRwBwZVAwGfugH91zgcAr34rCpgkgZUhYQKuAJessc5UBaZKeCSBsTI2n6FnwOYK+AMtH/1m8tRPRBkvLyWF4iRnk1EFmSApeo7/QPomSShcQYQAa1/f6/edO1s4grt/TqwKgp8S5eXgKbARu0PeYG0CCchDTSLxD3toGOTUxr4hZhlkrMHdkCjKADIE/cSTSnQsbx0AAAAAElFTkSuQmCC"/>
+                        </svg>
+                    </div>
+                    <div class="agreement-text">
+                        Нажимая на кнопку, я даю согласие на обработку
+                        персональных данных и соглашаюсь с <span>политикой конфиденциальности</span>
+                    </div>
+                </div>
+                <div class="agreement-error error">Подтвердите согласие с условиями</div>
+                <div class="order-form-popUp">
+                    <h3 class="order-form-popUp-text">Спасибо, мы свяжемся с вами в ближайшее время!</h3>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<section class="excursion  wow animate__animated animate__fadeInDown">
+    <div class="container">
+        <div class="excursion-block">
+            <h1 class="excursion-title">
+                Запишитесь на экскурсию
+            </h1>
+            <div class="excursion-text">
+                В готовые дома, чтобы лично убедиться в качестве нашей работы
+            </div>
+            <button class="excursion-btn btn hvr-bounce-in">Записаться</button>
+        </div>
+        <div class="popUp">
+            <div class="popUp-block">
+                <div class="close-popUp" id="close-popUp">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                         height="30"
+                         viewBox="0 0 30 30">
+                        <image id="закрыть" width="30" height="30"
+                               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAwElEQVRIidWXQQrDMAwEl/7MvvZ7eUrOfUvyiVy3GJyLSdpKllgqCARiaYwsWRuQXEhuJAtJJD+lsxb0l2YHyZoIrp3RbDt3cSTD68Aodx8i4Zexvy7IgI7gaPjHWGaHCOgdeBb+k+90AK9PWCDrRqNSZ85OxLm56mG2Ut1FaAFfwd1tZwWPcHevP6Cyf0i1pLgk7SS5QCRXpmRISMaiRAhIpI9E7EnkrUzQS35h2nRaAewAngBeibOqxW6MHcD6BqJqi/fsJy9EAAAAAElFTkSuQmCC"/>
+                    </svg>
+                </div>
+                <div class="popUp-text">
+                    Пожалуйста, оставьте свои данные, чтобы мы могли связаться с вами и уточнить детали предстоящей
+                    экскурсии
+                </div>
+                <form class="order-form-popUp" id="order-form-popUp">
+                    <input type="text" placeholder="Ваше имя" class="order-input-popUp" id="name-input-popUp">
+                    <div class="name-error-popUp error">Введите имя</div>
+                    <input type="tel" placeholder="Ваш телефон" class="order-input-popUp" id="phone-input-popUp">
+                    <div class="phone-error-popUp error">Введите номер телефона</div>
+                    <button class="btn order-btn-popUp hvr-bounce-in" id="create-order-popUp" type="button">Нужна консультация
+                    </button>
+                    <div class="agreement-popUp">
+                        <div class="checkbox-popUp">
+                            <input type="button" id="check-btn-popUp" class="check-input-popUp">
+                            <svg class="check-mark-popUp" xmlns="http://www.w3.org/2000/svg"
+                                 xmlns:xlink="http://www.w3.org/1999/xlink" width="25"
+                                 height="18" viewBox="0 0 25 18">
+                                <image id="tick" width="25" height="18"
+                                       xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAASCAYAAACuLnWgAAAA50lEQVQ4jbXSrwrCUBTH8SO+hRitFsuiINh8AGHVsmAzDB9AbEYRrEbfwocwmGRYDGIxCPKVq3d4GM65P/fAHdzds33Gzq8GiKMaishCRLZiEAfLBx68K3IBjBRwBwZVAwGfugH91zgcAr34rCpgkgZUhYQKuAJessc5UBaZKeCSBsTI2n6FnwOYK+AMtH/1m8tRPRBkvLyWF4iRnk1EFmSApeo7/QPomSShcQYQAa1/f6/edO1s4grt/TqwKgp8S5eXgKbARu0PeYG0CCchDTSLxD3toGOTUxr4hZhlkrMHdkCjKADIE/cSTSnQsbx0AAAAAElFTkSuQmCC"/>
+                            </svg>
+                        </div>
+                        <div class="agreement-text-popUp">
+                            Нажимая на кнопку, я даю согласие на обработку
+                            персональных данных и соглашаюсь с <span>политикой конфиденциальности</span>
+                        </div>
+                    </div>
+                    <div class="agreement-error-popUp error">Подтвердите согласие с условиями</div>
+                </form>
+                <div class="popUp-success">
+                    <h1 class="popUp-success-text">
+                        Спасибо, мы свяжемся с вами в ближайшее время!
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-block">
+            <div class="address">
+                <div class="city">г. Киев, бульвар Кольцова, 14-Ж</div>
+                <div class="days">Пн-Пт: 10:00 -19:00</div>
+            </div>
+            <div class="logo-block">
+                <a href="#" class="logo">
+                    <svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                         width="92"
+                         height="63" viewBox="0 0 92 60">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    font-size: 18px;
+                                    fill: #fff;
+                                    font-family: Neumann, sans-serif;
+                                }
+                            </style>
+                        </defs>
+                        <image id="home" x="27" width="34" height="39"
+                               xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAnCAYAAABqippxAAAB30lEQVRYhe2VMUgDMRSG/7ZSi0snt+4dXdxFFxFBOkgXB91EEARBKDjaQSiImy6iFRzcRHBwEZx1cFRwEd1K0UKtWpRfgi8QQ9u7XNujw/3w4C55+fNd8pIDyW5ijeQTySLJWDde3UAU+F9HJBNhg9gQWmckU2GBbFmTH5P8NN6vSKb7DbJtQaxK+yTJmtF+S3K0XyA2xIrVP06yYvTfk8z0EkSdhl0PCB1Zks9G3ou0dQ2iIPYM4x+Six5jMrIaWhVZrcAgrSAWfC61qo8bY2xN6sgZRN0HBwEhdKTlBGmpk5VzAVEQJ4ZBk+S8I4SOYblbzA9a8gPSCmIuIITpeWgV+3onkCTJ0x5DmPW2Y8EUW4EoiHMjqUFypkcQZmxaMPv6/9QOYqoPEDqWpVa01C4kVUc5RAgdedl6rbJqrMpLneRECBA6pkl+yNzVOIAE/vQI4Brh6RLAg8yWiIc4cUdFILYiEFsDAzIUYMwIgKRHThNAw8XUdUUKAOoAXj2iLrl9A8kDiPnIi0mub7lujQb/BnDRJmdWfJ0+MkiNKL0DyLXpewOQdjWMjq+tCMRWBGJrIP81WQB3HvlZB28nPwXyJc8pAGM+J9FjOvU5+SmQEoANAMMOEGpMO7n7AaVf9ipaLTyhHpcAAAAASUVORK5CYII="/>
+                        <text id="House_Care" data-name="House Care" class="cls-1" x="0.062" y="60.45">House Care</text>
+                    </svg>
+                </a>
+                <div class="social footer-social">
+                    <a href="#" class="social-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                             height="30" viewBox="0 0 30 30">
+                            <image id="instagram" width="30" height="30"
+                                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAACPklEQVRIicWXvWsUURTFf7sOCTJlIFpYKVgFUiypVwRBU2gQUthGXEiXxiJ/Q/o0FmkMFtskNgZstI9FQCzTmCK7IG6z6IaEKw/OhOs4n8uue+Ax7+O+e+55896bOw0zI4UG8ARYB1rAbWAubVSCC+Ac+AJ0gQ/A30SB2JWWmR3b5HEs39dcXvFTRZeoOwOOgFPgV03FN4G7wGPgjvoutIrvveIQzUg6h2bWMbMotRrjlEi+hvI9SpSHwYZb3mCwMgHCdFlx5IGrETpX3RvtTJDsvpk9dO2O41kNHXtqfK+5vPMqWWM3zOyn/CbkkTgC9po6MmgjXZZsmjbwFugBv1V66ms7uyvgGzDQJkW+j1RvhUj6imK7QN2CmR1UOGQHsvXKvZ9t2fUjd3zyjswC8AlYUjsofAecqL0MvABuAc+Ae8AD4IeUeyQccyGKgaLYylHrle6aWZxhE2vMK8/ytaXxQRlxO0VatuE8ebuIuFmymV655X1dYotseqm5mSgjfqRneKfDCsRD2fq5tYnngUXVTwrs0khsF+WjNvFUUUQ8AvqqL9cIIrHty8dYij/qGc5pXIE0lq2fOxbxGz3D5bBTgXhHtn7uWMSfgUPVN4HdHOWxxjbVPtTcXEQVVLzUNbgkx88LrsyAr5pTjCl/JNLl+iPRVDaIcqQ8hAt/TZf/vtvtqL6vsTXZ5iHhOJ9WIpBV/kkEuooiZIMbFd55glHROc3Ahss4u8wy2WMW6e3ME3qv/L//wiSY/k8b8AdBB3vHI87lIgAAAABJRU5ErkJggg=="/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30"
+                             height="26" viewBox="0 0 30 26">
+                            <image id="telegram_1_" width="30" height="26"
+                                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAaCAYAAACgoey0AAAC+ElEQVRIib2WXWhPYRzHvzOzsZC5QCLlRq6GLUPTqKEUk+Y177UWVyJKkQuUcqVZhKk18hJxg+RiKxZmWxmLkfdCXmZL5m376NHv8Oz0P/1PM371dM75vX2f8zy/5/t7UgD9BxkoaZGkuZI6Je38l8ApkvIlrZFULCnTs7XIAffyGAlsAx7yR1qBA8Bk4AG9CJgOFAOXgE6D6wKuAEuADPNLA74Cz/8WMBvYD7zz/u4xsAMYncB/ovmc69uDvcuStEzSWkkTTNchqUpShaRq29/5kkZJuu7FTrJnXdw/6wPMBk7ZUgVyAygBBpmfK9bFQLPZb4fyHDR9YTLAscAu4IUH9hrYB4z3/BxgEdDo+XUAM0L56syWlQgsE1gJ1HhJvgMXgHlWIL7/HKCe7vLNfMMF+N1qQL5hCnAEaPdS3AM2A8MSTLDQljqQNnu6ql6ewD/X7GcC4HzgbijBISAvYvkLgOrQPm/1gEsj4krNviUA/miKJmAFMCAi0E3kqgfYaMs8DnjrJ40Yh81nZgB8x0vm3vfaXwV7mQNcDgEWWUGNAV6afneSQg0Kb3AAPATYDjSECqQ9tIfNxkIplmgE8MhsZUlA+wM/jEYVLi43hgOr7by2WtL3wDI7y4HfUNsaJ5XeZKJGnvmejAL2R4YVTJvHtTKyuGmJzgOpMQhog/lvigPsxjELWOjpqkx3C+gXk/kqLGZ6XOBZFnDWvlO9Y+PIYH1M4CbrVgPjAjugN8AXq8YcA20BPtv7UWOlqByZRir3fX2fJJ3IXVNOS0qXtEBSgenLJU2V9My6lOtIIyJyZEu/cOp9ZTJgJ8ftudQDdkBPJD217zxJDZKmJIgPWuGtbtoY+5NixO6W6xPwwbg7aAy1dhnAmsO6UHyl2ab5+jjAbuzxiKTBu09d9Ch2ldWCk3Kv4ptt0pk9AR5rzOPLiQTHKdfr3TXGy11Gxd1yxgV2w7W6V7bU7k4VxVZuG66FJrkx7Pev7tVpkkrsXl0rqUxS12+rpJ9vk+a4uT2/LgAAAABJRU5ErkJggg=="/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31"
+                             height="24" viewBox="0 0 31 24">
+                            <image id="youtube" width="31" height="24"
+                                   xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAYCAYAAAACqyaBAAACX0lEQVRIib2WTUhVURSFP59W/qYQEg6iiLC/SVBRZGQhQYOoBs2KphFEBM2aOGzipD9o0KRB44ImBUERUQ6EBj3KJIiwekgUpa+0MncsWxcfIniu8lyw2efAPWftc87e+66aiMCoAQ7Z1gArgRagGWgCltkL9cAKZvALmPDsB/DHvgyM2oaBB8B9YJo0I28H7gJ7mB/a8O8cX9U60PnQDxwDRjLyx0A38Aa4CrwGvgHjtu/2Ewmb61YagFagsWK8BThj3z990Ijoiv8YiohWBVNFa4qIovkOFICjjviKT1hNKA+uef/DIt/uyZMqE2d4ar9N5B2evEtYqKQ6DuxcBPl7+w69w3BETCW+84mYwZ2I6FxgfohvuOBaHk2Mur1irHIpApeBVTlPL76Wgq9yKufiXuCS6/0c8Ba4ACxPXC++2oIbQ+rJKyO/CGwCbgNtQJ/7w8HE9c2FnKSzoeQ5CewCPgPrgVupixdLLuwHrlfkw8OlIFebvAc8AnYAg8AR4FTyDhFRjogviSVy3oU2GBGTHpci4nRE1OUoNfGV64BJZ3wKfvubjW6VfbZyzlsT36T+ah/c5VIC0Hc3nGgqtVJO0gwq0ZLIXwGb3WzynmAhUGmPqSyVcCPeYO0SEAvr7EdE/sKTvUtEvs9+QJnX46wt+mdfTTHRqGc2X7feXMLxGbAbGAJuAi+Br5ZOY86FcWf4fKi3tVlCNXjcCZwFtgLPga5Mw622gFQAKZhL8aQKyAGrp0+zpXOP2+UGiz/JZ8lljeU1z7qiRGGGSun80/1AXrcm04/ko1uvuuIUwD99cw44W1OwbwAAAABJRU5ErkJggg=="/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="phone">
+                <span class="phone-number">+380 (96) 73-67-281</span>
+                <div class="phone-number-order">
+                    <div class="anim"></div>
+                    <a class="phone-number-order-link hvr-bounce-in">Заказать звонок</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="scripts/wow.min.js">
+</script>
+<script> new WOW().init();</script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="scripts/jquery.inputmask.min.js"></script>
+<script src="scripts/lightzoom.js"></script>
+<script src="scripts/slick.js"></script>
+<script src="scripts/script.js"></script>
+</body>
+</html>
