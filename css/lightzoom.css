@@ -4,8 +4,8 @@
 
 a.lightzoom {
   cursor: zoom-in;
-  cursor: -webkit-zoom-in;
-  cursor: -moz-zoom-in;
+  //cursor: -webkit-zoom-in;
+  //cursor: -moz-zoom-in;
 }
 
 #lz-container {

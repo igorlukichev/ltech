@@ -1,7 +1,7 @@
 <?php
 //if(_SERVER["REQUEST_METHOD" == "POST"]){
-        $name = $_POST['name'];
-        $phone = $_POST['phone'];
+        $name = $_POST['namePop'];
+        $phone = $_POST['phonePop'];
         $to = 'admin@ltech.site'; //Почта получателя, через запятую можно указать сколько угодно адресов
         $subject = 'Обратный звонок'; //Заголовок сообщения
         $message = '
@@ -10,8 +10,8 @@
                         <title>'.$subject.'</title>
                     </head>
                     <body>
-                        <p>Имя: '.$_POST['name'].'</p>
-                        <p>Телефон: '.$_POST['phone'].'</p>
+                        <p>Имя: '.$_POST['namePop'].'</p>
+                        <p>Телефон: '.$_POST['phonePop'].'</p>
                     </body>
                 </html>'; //Текст нашего сообщения можно использовать HTML теги
         $headers  = 'MIME-Version: 1.0' . "\r\n"; //Кодировка письма

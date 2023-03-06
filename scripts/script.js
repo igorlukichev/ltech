@@ -19,6 +19,7 @@ $(window).ready(function () {
     const phoneErrorPop = $('.phone-error-popUp');
     const checkInputErrorPop = $('.agreement-error-popUp');
     const gallery = $('.gallery-container');
+    const orderForm = document.getElementById('wdh_form');
 
     if (window.matchMedia('(max-width: 768px)').matches) {
         $('.gallery-item-first').removeAttr('data-lazy').attr('src','../images/slider1-min.png');
@@ -47,10 +48,10 @@ $(window).ready(function () {
     }
 
     $('.phone-number-order-link').click(function () {
-        $('#order-form')[0].scrollIntoView({behavior: "smooth"});
+        orderForm.scrollIntoView( {behavior: "smooth"});
     });
     $('.go-to-order').click(function () {
-        $('#order-form')[0].scrollIntoView({behavior: "smooth"});
+        orderForm.scrollIntoView({behavior: "smooth"});
     });
 
     checkInput.click(function () {
@@ -130,25 +131,26 @@ $(window).ready(function () {
                 url: 'wdh_send_form.php',
                 data: $('#wdh_form').serialize(),
                 //data: {name: name.val(), phone: phone.val()},
-                success: function() {
+                success:(function() {
                     $('.agreement').css('display', 'none');
                     $('.order-form-popUp').css('display', 'block');
-                },
-                error: function () {
-                    alert('Заказ не создан! Попробуйте ещё раз.');
-                }
-            })
-                .done(function (msg) {
+                    name.val('');
+                    phone.val('');
+                })
+                //error: function () {
+                //    alert('!Заказ не создан! Попробуйте ещё раз!');
+                //}
+            });
+               /* .done(function (msg) {
                     if (msg.success) {
                         $('.agreement').css('display', 'none');
                         $('.order-form-popUp').css('display', 'block');
-                        name.val('');
-                        phone.val('');
+
                     } else {
                         alert('Заказ не создан! Попробуйте ещё раз.');
                     }
 
-                });
+                });*/
         }
     });
 
@@ -180,10 +182,18 @@ $(window).ready(function () {
         if (!hasError) {
             $.ajax({
                 method: "POST",
-                url: "https://testologia.site/checkout",
-                data: {name: namePop.val(), phone: phonePop.val()}
+                url: 'wdh_send_form2.php',
+                data: $('#order-form2-popUp').serialize(),
+                //data: {name: name.val(), phone: phone.val()},
+                success:(function() {
+                    $('#order-form2-popUp').css('display', 'none');
+                    $('.popUp-text').css('display', 'none');
+                    $('.popUp-success').css('display', 'block');
+                    namePop.val('');
+                    phonePop.val('');
+                })
             })
-                .done(function (msg) {
+                /*.done(function (msg) {
                     if (msg.success) {
                         console.log(hasError);
                         $('.order-form-popUp').css('display', 'none');
@@ -192,9 +202,9 @@ $(window).ready(function () {
                         name.val('');
                         phone.val('');
                     } else {
-                        alert('Заказ не создан! Попробуйте ещё раз.');
+                        alert('!Заказ не создан! Попробуйте ещё раз!');
                     }
-                });
+                });*/
         }
     });
 
